@@ -1,0 +1,31 @@
+.wrapper-page {
+  display: flex;
+  justify-content: space-around;
+  padding: 12rem 0px;
+}
+
+.wrapper-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    font-family: "Sora", sans-serif;
+    font-weight: 600;
+  }
+
+  input {
+    border: 1px solid black;
+    margin-top: 25px;
+    padding: 6px;
+    border-radius: 6px;
+  }
+
+  button {
+    max-width: 140px;
+    color: white;
+    margin-top: 14px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
