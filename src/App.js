@@ -1,9 +1,9 @@
-import Home from './templates/home.js/index'
 
+import Routes from './services/routes'
 
 function App() {
   return (
-   <Home />
+   <Routes />
   );
 }
 

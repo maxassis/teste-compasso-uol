@@ -4,6 +4,7 @@ import Lottie from 'react-lottie';
 import animationData from '../../assets/imgs/github-icon-black.json'
 import api from '../../services/api'
 import useStore from '../../services/store'
+import { useHistory } from 'react-router-dom'
 
 
 const defaultOptions = {
@@ -16,6 +17,7 @@ const defaultOptions = {
   };
 
 function Home() {
+    const history = useHistory()
     const Store = useStore((state) => state.selectedUser)
     const addStore = useStore((state) => state.setSelectedUser)
 
@@ -28,8 +30,6 @@ function Home() {
        });
 
     } 
-
-  console.log(Store)
 
     return(
       <main className="container">
@@ -53,10 +53,7 @@ function Home() {
         </div>
         <GithubCorner href="https://github.com/username/repo" /> 
        </main>  
-
     )
-
-
 
 }
 
