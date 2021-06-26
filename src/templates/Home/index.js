@@ -18,17 +18,18 @@ const defaultOptions = {
 
 function Home() {
     const history = useHistory()
-    const Store = useStore((state) => state.selectedUser)
     const addStore = useStore((state) => state.setSelectedUser)
-
 
     async function fetch(){
       await api.get("maxassis")
-        .then((response) => addStore(response.data))
-        .catch((err) => {
+        .then((response) => {
+          console.log(response.data.login)
+          addStore(response.data)
+          history.push('/user')
+        
+        }).catch((err) => {
           alert.error("ops! ocorreu um erro" + err);
        });
-
     } 
 
     return(
@@ -54,8 +55,6 @@ function Home() {
         <GithubCorner href="https://github.com/username/repo" /> 
        </main>  
     )
-
 }
-
 
 export default Home 
