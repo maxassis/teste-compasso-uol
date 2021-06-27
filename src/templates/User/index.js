@@ -3,14 +3,17 @@ import { useEffect, useState } from "react";
 import GithubCorner from "react-github-corner";
 import useStore from "../../services/store";
 import CardUser from "../../components/CardUser";
-import styles from "./styles.module.scss";
 import api from "../../services/api";
+import SingleCardRepositorie from '../../components/CardSingleRepositorie/index'
 
 function User() {
   const [repositories, setRepositories] = useState();
   const [stars, setStars] = useState()
+  const [toggleRepositories, setToggleRepositories] = useState(false)
+  const [toogleStars, setToggleStars] = useState(false)
   const username = useStore((state) => state.selectedUser);
- 
+  
+  console.log(repositories)
   
   async function fetchRepositories() {
     await api
@@ -39,36 +42,35 @@ function User() {
    fetchStars()
   }, []);
 
-
   return (
     <div className="container">
-      <CardUser />
-      <div className={styles.grid}> 
-       
-       {repositories?.map((item) => {
-         return (
-          <div className={styles.grid__item}> 
-          
-          <div>
-          <h2 >{item.name}</h2>
-          <h4>{item.language}</h4>
-          </div>
+      <CardUser 
+      setToggleRepositories={setToggleRepositories} 
+      toggleRepositories={toggleRepositories} 
+      setToggleStars={setToggleStars}
+      toogleStars={toogleStars}
+      />
 
-          <div className={styles['grid__item__wrapper-forks']}> 
-          <span>stars: {item.stargazers_count}</span>  
-          <span>forks: {item.forks}</span>  
-          </div>
+      {!!toggleRepositories && 
+      <SingleCardRepositorie 
+      repositories={repositories} 
+      setToggleRepositories={setToggleRepositories} 
+      toggleRepositories={toggleRepositories}
+      setToogleStars={setToggleStars}
+      toogleStars={toogleStars}
+      />}
 
-          <div>
-          <button className="btn btn-dark">ver mais</button>
-          </div>  
+      {!!toogleStars && 
+      <SingleCardRepositorie 
+      repositories={stars} 
+      setToggleRepositories={setToggleStars} 
+      toggleRepositories={toogleStars}
+      setToogleStars={setToggleStars}
+      toogleStars={toogleStars}
+      />}  
 
-        </div> 
 
-         )
-       })}
-       
-      </div>
+      
       <GithubCorner href="https://github.com/username/repo" />
     </div>
   );

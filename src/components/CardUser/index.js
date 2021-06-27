@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 import useStore from "../../services/store";
 
-function CardUser() {
+function CardUser({toggleRepositories, setToggleRepositories, setToggleStars, toogleStars}) {
   const userData = useStore((state) => state.selectedUser);
   const {
     login,
@@ -13,6 +13,31 @@ function CardUser() {
     public_repos,
     html_url,
   } = userData;
+
+
+  function toogleCardStars() {
+  if(toggleRepositories === true) {
+    setToggleRepositories(!toggleRepositories) }
+  
+    if(toogleStars === true) {
+      setToggleStars(true)  
+    }  
+
+    setToggleStars(true)  
+  }
+
+  function toogleCardRepositories() {
+    if(toogleStars === true) {
+      setToggleStars(!toogleStars) }
+
+      if(toggleRepositories === true) {
+        setToggleRepositories(true) }  
+      
+      setToggleRepositories(true)  
+    }
+
+
+
 
   return (
     <div className={styles["wrapper-user"]}>
@@ -37,12 +62,22 @@ function CardUser() {
           <a href={html_url} className="btn btn-dark" target="_blank"  rel="noreferrer">
             ver perfil
           </a>
-          <a href={html_url} className="btn btn-dark" target="_blank"  rel="noreferrer">
+          <button 
+          className="btn btn-dark" 
+          target="_blank"  
+          rel="noreferrer"
+          onClick={toogleCardRepositories}
+          >
             ver repositorios
-          </a>
-          <a href={html_url} className="btn btn-dark" target="_blank"  rel="noreferrer">
+          </button>
+          <button 
+          className="btn btn-dark" 
+          target="_blank"  
+          rel="noreferrer"
+          onClick={toogleCardStars}
+          >
             ver stars
-          </a>
+          </button>
         </div>
       </div>
     </div>
