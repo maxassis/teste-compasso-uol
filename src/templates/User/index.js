@@ -10,7 +10,8 @@ function User() {
   const [repositories, setRepositories] = useState();
   const [stars, setStars] = useState()
   const username = useStore((state) => state.selectedUser);
-
+ 
+  
   async function fetchRepositories() {
     await api
       .get(username.login+"/repos")
@@ -43,26 +44,31 @@ function User() {
     <div className="container">
       <CardUser />
       <div className={styles.grid}> 
-        <div className={styles.grid__item}> 
-            hewjbrewjhbewj
-        </div>
-        <div className={styles.grid__item}> 
-            hewjbrewjhbewj
-        </div>
-        <div className={styles.grid__item}> 
-            hewjbrewjhbewj
-        </div>
-        <div className={styles.grid__item}> 
-            hewjbrewjhbewj
-        </div>
-        <div className={styles.grid__item}> 
-            hewjbrewjhbewj
-        </div>
-        
-        
-      </div>
+       
+       {repositories?.map((item) => {
+         return (
+          <div className={styles.grid__item}> 
+          
+          <div>
+          <h2 >{item.name}</h2>
+          <h4>{item.language}</h4>
+          </div>
 
-      
+          <div className={styles['grid__item__wrapper-forks']}> 
+          <span>stars: {item.stargazers_count}</span>  
+          <span>forks: {item.forks}</span>  
+          </div>
+
+          <div>
+          <button className="btn btn-dark">ver mais</button>
+          </div>  
+
+        </div> 
+
+         )
+       })}
+       
+      </div>
       <GithubCorner href="https://github.com/username/repo" />
     </div>
   );

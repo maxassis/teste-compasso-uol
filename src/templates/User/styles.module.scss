@@ -8,5 +8,32 @@
     height: 266px;
     border: 1px solid black;
     justify-self: center;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 11px 20px;
+
+    h2 {
+      font-family: "Sora", sans-serif;
+      font-weight: 600;
+    }
+
+    h4 {
+      text-align: center;
+      font-size: 1.4rem;
+    }
+
+    button {
+      font-size: 13px;
+      font-weight: bold;
+    }
+  }
+}
+
+.grid__item {
+  &__wrapper-forks {
+    gap: 35px;
+    display: flex;
   }
 }
