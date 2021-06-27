@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import GithubCorner from "react-github-corner";
 import useStore from "../../services/store";
 import CardUser from "../../components/CardUser";
-//import styles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 import api from "../../services/api";
 
 function User() {
@@ -42,6 +42,26 @@ function User() {
   return (
     <div className="container">
       <CardUser />
+      <div className={styles.grid}> 
+        <div className={styles.grid__item}> 
+            hewjbrewjhbewj
+        </div>
+        <div className={styles.grid__item}> 
+            hewjbrewjhbewj
+        </div>
+        <div className={styles.grid__item}> 
+            hewjbrewjhbewj
+        </div>
+        <div className={styles.grid__item}> 
+            hewjbrewjhbewj
+        </div>
+        <div className={styles.grid__item}> 
+            hewjbrewjhbewj
+        </div>
+        
+        
+      </div>
+
       
       <GithubCorner href="https://github.com/username/repo" />
     </div>
