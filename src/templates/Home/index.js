@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import GithubCorner from 'react-github-corner';
 import styles from "./styles.module.scss"
 import Lottie from 'react-lottie';
@@ -17,18 +18,21 @@ const defaultOptions = {
   };
 
 function Home() {
+    const [username, setUsername] = useState("")
+
     const history = useHistory()
     const addStore = useStore((state) => state.setSelectedUser)
 
+    console.log(username)
+
     async function fetch(){
-      await api.get("maxassis")
+      await api.get(username)
         .then((response) => {
-          console.log(response.data.login)
           addStore(response.data)
-          history.push('/user')
+           history.push('/user')
         
         }).catch((err) => {
-          alert.error("ops! ocorreu um erro" + err);
+          alert("digite um usuario valido");
        });
     } 
 
@@ -39,7 +43,12 @@ function Home() {
         <div className={styles["wrapper-title"]}>
         <h1>Compass Developer Search</h1>
         <h3>Encontre facilmente um desenvolvedor</h3>
-        <input type="text" placeholder="ex: maxassis" />
+        <input 
+        type="text" 
+        placeholder="ex: maxassis" 
+        required 
+        value={username}
+        onChange={(e) => setUsername(e.target.value)} />
         <button className="btn btn-dark" onClick={fetch}>BUSCAR</button>
         </div>
         
