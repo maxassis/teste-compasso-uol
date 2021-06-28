@@ -68,10 +68,8 @@ function User() {
       setToogleStars={setToggleStars}
       toogleStars={toogleStars}
       />}  
-
-
-      
-      <GithubCorner href="https://github.com/username/repo" />
+         
+      <GithubCorner href="https://github.com/maxassis?tab=repositories" target="_blank" rel="noreferrer" />
     </div>
   );
 }

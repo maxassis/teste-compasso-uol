@@ -2,16 +2,31 @@
   display: flex;
   justify-content: space-around;
   padding: 12rem 0px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.wrapper-title {
+.wrapper-page__wrapper-title {
   display: flex;
   justify-content: center;
   flex-direction: column;
 
+  @media (max-width: 991px) {
+    width: 287px;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    text-align: center;
+  }
+
   h1 {
     font-family: "Sora", sans-serif;
     font-weight: 600;
+    font-size: 3rem;
   }
 
   form {
@@ -21,16 +36,38 @@
 
   input {
     border: 1px solid black;
-    margin-top: 25px;
-    padding: 6px;
-    border-radius: 6px;
+    margin-top: 2.5rem;
+    padding: 0.6rem;
+    border-radius: 0.6rem;
   }
 
   button {
-    max-width: 140px;
+    max-width: 14rem;
     color: white;
-    margin-top: 14px;
-    font-size: 13px;
+    margin-top: 1.4rem;
+    font-size: 1.3rem;
     font-weight: bold;
+    width: 100%;
+
+    @media (max-width: 480px) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.wrapper-page__wrapper-title__logo {
+  @media (max-width: 991px) {
+    width: 223px;
+    height: 223px;
+  }
+
+  @media (max-width: 600px) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 5rem;
   }
 }

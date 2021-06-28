@@ -1,8 +1,15 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(26rem, 293px));
   grid-auto-rows: 28.5rem;
   margin-top: 8rem;
+  justify-content: center;
+
+  @media (max-width: 600px) {
+    align-items: center;
+    margin-top: 10px;
+  }
+
   &__item {
     width: 95%;
     height: 25rem;
