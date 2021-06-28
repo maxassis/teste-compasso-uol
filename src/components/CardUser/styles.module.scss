@@ -1,9 +1,12 @@
 .wrapper-user {
   display: flex;
-  border: 1px solid black;
+  border-radius: 6px;
   align-items: center;
   gap: 75px;
   margin-top: 60px;
+  background-color: #f4f6f5;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
   @media (max-width: 900px) {
     gap: 13px;

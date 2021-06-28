@@ -13,8 +13,6 @@ function User() {
   const [toogleStars, setToggleStars] = useState(false)
   const username = useStore((state) => state.selectedUser);
   
-  console.log(repositories)
-  
   async function fetchRepositories() {
     await api
       .get(username.login+"/repos")
