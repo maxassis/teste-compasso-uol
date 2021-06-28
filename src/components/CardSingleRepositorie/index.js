@@ -8,7 +8,7 @@ function CardSingleRepositorie({repositories}) {
        
         {repositories?.map((item) => {
           return (
-           <div className={styles.grid__item}> 
+           <div className={styles.grid__item} key={item.index}> 
            
            <div>
            <h2 >{item.name}</h2>
