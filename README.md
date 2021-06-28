@@ -11,6 +11,8 @@ Teste para a vaga de desenvolvedor front-end na empresa Compasso UOL, todos os r
 
 Axios <br/>
 
+Bootstrap <br/>
+
 Sass <br/>
 
 Lottie <br/>
