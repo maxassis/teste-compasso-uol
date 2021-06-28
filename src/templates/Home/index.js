@@ -58,7 +58,7 @@ function Home() {
           <Lottie options={defaultOptions} />
         </div>
       </div>
-      <GithubCorner href="https://github.com/maxassis" target="_blank" rel="noreferrer" />
+      <GithubCorner href="https://github.com/maxassis/teste-compasso-uol" target="_blank" rel="noreferrer" />
     </main>
   );
 }

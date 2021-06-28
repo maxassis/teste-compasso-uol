@@ -55,7 +55,7 @@ function User() {
   }, []);
 
   return (
-    <div className="container">
+    <main className="container">
     
     <div className={styles.lottie}>
      <Link to="/" >
@@ -92,8 +92,8 @@ function User() {
       toogleStars={toogleStars}
       />}  
          
-      <GithubCorner href="https://github.com/maxassis?tab=repositories" target="_blank" rel="noreferrer" />
-    </div>
+      <GithubCorner href="https://github.com/maxassis/teste-compasso-uol" target="_blank" rel="noreferrer" />
+    </main>
   );
 }
 
