@@ -1,4 +1,4 @@
-# Ensinio
+# Teste Compasso Uol
 
 Teste para a vaga de desenvolvedor front-end na empresa Compasso UOL, todos os requisitos do teste se encontram em https://github.com/recrutamento-compasso/api-github-interview
 
